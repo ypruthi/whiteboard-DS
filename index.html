@@ -14,14 +14,20 @@
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button>Black</button>
-                <button>White</button>
-                <button>Rainbow</button>
-                <button>Reset</button>
+                <button onclick="colorSwitch('black')">Black</button>
+                <button onclick="colorSwitch('white')">Erase</button>
+                <button onclick="colorSwitch('gray')">Gray</button>
+                <button onclick="colorSwitch('rainbow')">Rainbow</button>
+                <button onclick="clearBoard()">Reset</button>
             </div>
             <div>
-                <input type="text" placeholder="Size of Board" value = "16">
-                <button>Size</button>
+                <input 
+                type="text" 
+                placeholder="Size of Board" 
+                value = "16"
+                onchange ="changeSize(this.value)"
+                />
+                <button>Re-size</button>
             </div>
         </div>
     </div>
