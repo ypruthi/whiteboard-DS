@@ -1,4 +1,5 @@
 let color = "black";
+let draw = true;
 
 function createBoard(size) {
     let board = document.querySelector(".board");
@@ -28,11 +29,14 @@ function changeSize(input) {
 
 function colorSquare() {
 
+    if (draw) {
+
     if (color === "rainbow") {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
     }
 
     this.style.backgroundColor = color;
+    }
 }
 
 function colorSwitch(option) {
@@ -44,3 +48,14 @@ function colorSwitch(option) {
     let grid = board.querySelectorAll("div");
     grid.forEach((div) => div.style.backgroundColor = 'white');
   }
+
+  document.querySelector("body").addEventListener("click", (e) => {
+      if(e.target.tagName != 'BUTTON') {
+        draw = !draw;
+        if (draw) {
+            document.querySelector(".mode").textContent = "Stylus: ON";
+        } else {
+          document.querySelector(".mode").textContent = "Stylus: OFF";
+        }
+      }
+  });
