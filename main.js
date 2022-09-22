@@ -53,9 +53,9 @@ function colorSwitch(option) {
       if(e.target.tagName != 'BUTTON') {
         draw = !draw;
         if (draw) {
-            document.querySelector(".mode").textContent = "Stylus: ON";
+            document.querySelector(".mode").textContent = "STYLUS: ON";
         } else {
-          document.querySelector(".mode").textContent = "Stylus: OFF";
+          document.querySelector(".mode").textContent = "STYLUS: OFF";
         }
       }
   });
